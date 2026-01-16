@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hussle Ink Tattoo Studio | Denver, CO</title>
+  <meta name="description" content="Hussle Ink Tattoo Studio — family-owned tattoo shop in South Denver near Federal & Jewell. Call/Text to book: 720-309-9071 or 720-926-3379." />
+
+  <style>
+    :root{
+      --bg:#07090c;
+      --card:#0e1218;
+      --card2:#0b0f15;
+      --text:#f4f7ff;
+      --muted:#aab3c2;
+      --line:#1f2733;
+
+      /* Tattoo palette: Blue / White / Black / Gray */
+      --blue:#2f6bff;
+      --ice:#9fd6ff;
+      --steel:#9aa6b2;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+
+      --radius:18px;
+      --max:1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}
+
+    /* subtle “ink” background */
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background:
+        radial-gradient(1200px 700px at 12% 0%, rgba(47,107,255,.18), transparent 55%),
+        radial-gradient(900px 700px at 88% 10%, rgba(159,214,255,.10), transparent 55%),
+        radial-gradient(900px 600px at 40% 90%, rgba(154,166,178,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent 28%);
+      pointer-events:none;
+      z-index:-1;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:26px 18px 64px;}
+
+    /* Top bar */
+    .topbar{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;}
+    .brand{display:flex;gap:12px;align-items:center;}
+    .mark{
+      width:48px;height:48px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(47,107,255,.35), rgba(159,214,255,.18));
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 14px 35px rgba(0,0,0,.55);
+      display:grid;place-items:center;overflow:hidden;
+    }
+    .mark img{width:100%;height:100%;object-fit:cover}
+    .brandTitle{font-weight:900;letter-spacing:.06em;text-transform:uppercase}
+    .brandSub{font-size:13px;color:var(--muted)}
+
+    .nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap;}
+    .pill{
+      padding:10px 14px;border:1px solid var(--line);border-radius:999px;
+      background:rgba(255,255,255,.03);
+    }
+    .pill:hover{border-color:rgba(47,107,255,.6)}
+    .cta{
+      padding:10px 14px;border-radius:999px;
+      background:linear-gradient(135deg, rgba(47,107,255,1), rgba(159,214,255,1));
+      color:#071018;font-weight:900;
+      border:0;
+    }
+    .cta:hover{filter:brightness(1.06)}
+
+    /* Layout cards */
+    .hero{margin-top:20px;display:grid;grid-template-columns:1.25fr .9fr;gap:16px;align-items:stretch;}
+    @media (max-width:900px){.hero{grid-template-columns:1fr;}}
+
+    .card{
+      background:linear-gradient(180deg, rgba(14,18,24,.92), rgba(11,15,21,.92));
+      border:1px solid rgba(255,255,255,.07);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:20px;
+      backdrop-filter: blur(8px);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* tattoo-style border glow */
+    .card::after{
+      content:"";
+      position:absolute; inset:-1px;
+      border-radius:var(--radius);
+      background:linear-gradient(135deg, rgba(47,107,255,.22), rgba(159,214,255,.10), rgba(154,166,178,.08));
+      z-index:0;
+      opacity:.40;
+      pointer-events:none;
+      mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      padding:1px;
+      -webkit-mask-composite:xor;
+      mask-composite:exclude;
+    }
+
+    .content{position:relative;z-index:1}
+
+    .kicker{color:var(--ice);font-weight:900;letter-spacing:.18em;font-size:12px;text-transform:uppercase}
+    .headline{font-size:44px;line-height:1.05;margin:8px 0 10px;letter-spacing:-.02em;text-transform:uppercase}
+    @media (max-width:520px){.headline{font-size:34px;}}
+    .sub{color:var(--muted);font-size:16px;line-height:1.55;margin:0 0 14px;}
+
+    .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap
